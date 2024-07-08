@@ -35,3 +35,5 @@ Developed a Streamlit application using Nifty-50 stock market data to create var
 28. Model for predicting close - Random forest 
 29. Time series plots with animation - closing price over time, volume traded over time
 30. 3-D Interactive plots - 3-D Scatter plot for high, low and close prices, 3-D Surface plot of close prices over time
+
+Download the .py file and upload it in your colab environment. Run the commands given in Streamlit_QQA.ipynb in Google colab.
