@@ -97,7 +97,7 @@ if subpage == "Price Trend & Moving Averages":
             st.plotly_chart(fig_vwap, use_container_width=True)
 
             # Add MACD (Moving Average Convergence Divergence)
-            st.subheader("📉 MACD Indicator (Trend & Momentum)")
+            st.subheader("MACD Indicator (Trend & Momentum)")
             df['EMA_12'] = df['Close'].ewm(span=12, adjust=False).mean()
             df['EMA_26'] = df['Close'].ewm(span=26, adjust=False).mean()
             df['MACD'] = df['EMA_12'] - df['EMA_26']
