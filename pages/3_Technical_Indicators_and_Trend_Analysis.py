@@ -299,8 +299,8 @@ elif subpage == "Volume-Based Indicators":
             # Plot for OBV (On-Balance Volume)
             df['OBV'] = (df['Close'].diff().gt(0) * 2 - 1) * df['Volume']
             df['OBV'] = df['OBV'].cumsum()
+            st.subheader("On Balance Volume")
             st.write("""
-            **On-Balance Volume (OBV)**  
             OBV uses volume flow to predict changes in stock price. It is a cumulative indicator where volume is added on up days and subtracted on down days. A rising OBV indicates buying pressure, while a falling OBV indicates selling pressure.
             """)
             fig_obv = go.Figure()
@@ -311,8 +311,8 @@ elif subpage == "Volume-Based Indicators":
             # Plot for IIX (Intraday Intensity Index)
             df['IIX'] = ((df['Close'] - df['Low']) / (df['High'] - df['Low'])) * df['Volume']
             df['IIX'] = df['IIX'].rolling(window=14).mean()  # Moving Average of IIX for smoothing
+            st.subheader("Intraday Intensity Index (IIX)")
             st.write("""
-            **Intraday Intensity Index (IIX)**  
             The Intraday Intensity Index measures the strength of price movement based on volume. A higher IIX value indicates stronger buying interest, while a lower value indicates weaker buying or selling activity.
             """)
             fig_iix = go.Figure()
@@ -323,8 +323,8 @@ elif subpage == "Volume-Based Indicators":
             # Plot for CMF (Chaikin Money Flow)
             df['MFV'] = ((df['Close'] - df['Low']) - (df['High'] - df['Close'])) / (df['High'] - df['Low']) * df['Volume']
             df['CMF'] = df['MFV'].rolling(window=20).sum() / df['Volume'].rolling(window=20).sum()
+            st.subheader("Chaikin Money Flow (CMF)")
             st.write("""
-            **Chaikin Money Flow (CMF)**  
             The Chaikin Money Flow indicator measures the amount of Money Flow Volume over a specific period. It combines both price and volume to evaluate buying and selling pressure. A positive CMF indicates buying pressure, while a negative CMF suggests selling pressure.
             """)
             fig_cmf = go.Figure()
